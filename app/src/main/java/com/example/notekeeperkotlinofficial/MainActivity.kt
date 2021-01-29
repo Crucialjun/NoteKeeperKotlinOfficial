@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -72,7 +73,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
         if(notePosition >= DataManager.notes.lastIndex){
-            val menuItem = menu.findItem(R.id.action_next)
+            val menuItem = menu?.findItem(R.id.action_next)
+            if(menuItem != null){
+                menuItem.icon = ContextCompat.getDrawable(this,R.drawable.ic_baseline_block_24)
+                menuItem.isEnabled = false
+            }
+
         }
         return super.onPrepareOptionsMenu(menu)
     }
