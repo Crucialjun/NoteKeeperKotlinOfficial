@@ -1,13 +1,10 @@
 package com.example.notekeeperkotlinofficial
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -29,7 +26,9 @@ class MainActivity : AppCompatActivity() {
         adapterCourses.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerCourses.adapter = adapterCourses
 
-        notePosition =  intent.getIntExtra(EXTRA_NOTE_POSITION, POSITION_NOT_SET)
+
+        notePosition =  savedInstanceState?.getInt(NOTE_POSITION, POSITION_NOT_SET)?:
+                intent.getIntExtra(NOTE_POSITION, POSITION_NOT_SET)
 
         if(notePosition != POSITION_NOT_SET){
             displayNote()
@@ -98,5 +97,11 @@ class MainActivity : AppCompatActivity() {
         note.course = spinnerCourses.selectedItem as CourseInfo
 
 
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putInt(NOTE_POSITION,notePosition)
     }
 }
