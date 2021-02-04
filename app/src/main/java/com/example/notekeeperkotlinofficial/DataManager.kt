@@ -10,18 +10,34 @@ object DataManager {
     }
 
 
+    fun addNote(course : CourseInfo ,noteTitle :  String, noteText : String ) : Int {
+        val note = NoteInfo(course,noteTitle,noteText)
+        notes.add(note)
+        return notes.lastIndex
+    }
+
+    fun findNote(course : CourseInfo,noteTitle: String,noteText: String) : NoteInfo? {
+        for(note in notes){
+            if(course == note.course && noteTitle == note.title && noteText == note.text){
+                return note
+            }
+        }
+        return null
+    }
+
+
     private fun initializeCourses(){
         var course = CourseInfo("android_intents","Android Programming with Intents")
-        courses.set(course.courseID,course)
+        courses[course.courseID] = course
 
         course = CourseInfo(courseID = "android_async",title = "Android Async Programming and services")
-        courses.set(course.courseID,course)
+        courses[course.courseID] = course
 
         course = CourseInfo(title = "Java Fundamentals : The Java Language",courseID = "java_lang",)
-        courses.set(course.courseID,course)
+        courses[course.courseID] = course
 
         course = CourseInfo("java_core","Java Fundamentals : The Core Platform")
-        courses.set(course.courseID,course)
+        courses[course.courseID] = course
 
 
     }
