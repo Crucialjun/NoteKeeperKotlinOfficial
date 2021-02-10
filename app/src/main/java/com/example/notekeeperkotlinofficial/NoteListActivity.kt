@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import kotlinx.android.synthetic.main.content_note_list.*
 
@@ -14,27 +15,22 @@ class NoteListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_note_list)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        findViewById<ExtendedFloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            val intent = Intent(this,MainActivity::class.java)
+        findViewById<ExtendedFloatingActionButton>(R.id.fab).setOnClickListener {
+            val intent = Intent(this,NoteActivity::class.java)
             startActivity(intent)
         }
 
-        listNotes.adapter =
-                ArrayAdapter(
-                        this,
-                        android.R.layout.simple_list_item_1,
-                        DataManager.notes
-                )
+        listItems.layoutManager = LinearLayoutManager(this)
 
-        listNotes.setOnItemClickListener { parent, view, position, id ->
-            val intent = Intent(this,MainActivity::class.java)
-            intent.putExtra(NOTE_POSITION,position)
-            startActivity(intent)
-        }
+
+        listItems.adapter = NoteRecyclerAdapter(this,DataManager.notes)
+
+
+
     }
 
     override fun onResume() {
         super.onResume()
-        (listNotes.adapter as ArrayAdapter<NoteInfo>).notifyDataSetChanged()
+        listItems.adapter?.notifyDataSetChanged()
     }
 }

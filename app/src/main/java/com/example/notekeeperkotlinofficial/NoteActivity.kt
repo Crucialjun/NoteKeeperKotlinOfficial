@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : AppCompatActivity() {
+class NoteActivity : AppCompatActivity() {
     private var notePosition = POSITION_NOT_SET
 
     override fun onCreate(savedInstanceState: Bundle?) {
