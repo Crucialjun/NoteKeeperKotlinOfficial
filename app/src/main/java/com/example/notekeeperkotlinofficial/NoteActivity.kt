@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.content_note.*
 
 class NoteActivity : AppCompatActivity() {
     private var notePosition = POSITION_NOT_SET
