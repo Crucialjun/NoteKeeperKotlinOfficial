@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.GridLayout
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.notekeeperkotlinofficial.DataManager
 import com.example.notekeeperkotlinofficial.R
+import com.jwhh.notekeeper.CourseRecyclerAdapter
+import kotlinx.android.synthetic.main.fragment_gallery.*
 
 class GalleryFragment : Fragment() {
 
@@ -19,13 +21,13 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+        return inflater.inflate(R.layout.fragment_gallery, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        listCourses.layoutManager = GridLayoutManager(requireContext(),2)
+        listCourses.adapter = CourseRecyclerAdapter(requireContext(),DataManager.courses.values.toList())
+    }
+
+
 }
