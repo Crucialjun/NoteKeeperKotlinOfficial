@@ -18,17 +18,16 @@
             android:layout_height="wrap_content">
 
             <ImageView
+
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:tint="#f05a28"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_assignment_24"
-                app:tint="#F05A28" />
+                app:srcCompat="@drawable/ic_baseline_assignment_24" />
 
             <TextView
                 android:id="@+id/txtCourse"
