@@ -24,11 +24,11 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:tint="#f05a28"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textCourse"
-                app:srcCompat="@drawable/ic_menu_slideshow" />
+                app:srcCompat="@drawable/ic_menu_slideshow"
+                app:tint="#f05a28" />
 
             <TextView
                 android:id="@+id/textCourse"
