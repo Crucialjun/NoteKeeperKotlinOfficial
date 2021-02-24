@@ -28,7 +28,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textCourse"
                 app:srcCompat="@drawable/ic_menu_slideshow"
-                app:tint="#f05a28" />
+                app:tint="@color/pluralsight_orange" />
 
             <TextView
                 android:id="@+id/textCourse"
