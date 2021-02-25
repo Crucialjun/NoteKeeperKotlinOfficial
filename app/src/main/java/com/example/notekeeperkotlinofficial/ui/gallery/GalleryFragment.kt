@@ -25,7 +25,11 @@ class GalleryFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        listCourses.layoutManager = GridLayoutManager(requireContext(),2)
+        listCourses.layoutManager = GridLayoutManager(
+                requireContext(),
+                resources.getInteger(R.integer.course_grid_span)
+        )
+
         listCourses.adapter = CourseRecyclerAdapter(requireContext(),DataManager.courses.values.toList())
     }
 

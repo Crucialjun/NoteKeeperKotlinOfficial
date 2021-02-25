@@ -39,7 +39,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="TextView"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/course_name_size"
                 android:textColor="#FF6D00"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
