@@ -68,17 +68,17 @@ class ItemActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-    private fun handleSelection(s: String) {
+    private fun handleSelection(s: Int) {
         Snackbar.make(listItems,s,Snackbar.LENGTH_LONG).show()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.nav_share -> {
-                handleSelection("Share")
+                handleSelection(R.string.nav_share_message)
             }
             R.id.nav_send -> {
-                handleSelection("Send")
+                handleSelection(R.string.nav_send_message)
             }
             R.id.nav_courses ->{
                 navController.navigate(R.id.nav_courses)

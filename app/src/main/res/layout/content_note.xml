@@ -13,7 +13,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="Note Text"
+        android:hint="@string/note_text_hint"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="@+id/spinnerCourses"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,7 +22,7 @@
 
     <Spinner
         android:id="@+id/spinnerCourses"
-        android:layout_width="0dp "
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
@@ -38,7 +38,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="Note Title"
+        android:hint="@string/note_title"
         android:inputType="textMultiLine"
         android:textColor="@color/teal_700"
         app:layout_constraintEnd_toEndOf="@+id/spinnerCourses"
