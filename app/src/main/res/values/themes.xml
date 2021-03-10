@@ -22,4 +22,9 @@
     <style name="Theme.NoteKeeperKotlinOfficial.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.NoteKeeperKotlinOfficial.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="NoteTitle" parent="TextAppearance.AppCompat.Small">
+
+        <item name="android:textColor">@color/pluralsightplum</item>
+    </style>
 </resources>
